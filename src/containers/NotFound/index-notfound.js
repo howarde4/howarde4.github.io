@@ -1,9 +1,10 @@
 import React from "react";
+import { Box } from "@mui/system";
 
-export default function NotFound(){
+export default function NotFound() {
     return (
-        <h1>
-            Not Found!
-        </h1>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <img src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg" alt="Not Found" width={500} height={400}></img>
+        </Box>
     )
 }

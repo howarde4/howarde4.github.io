@@ -1,6 +1,18 @@
 import React from "react";
 import { Grid } from '@mui/material';
+import { Button } from "@mui/material";
+import { Link } from '@mui/material';
+import { Box } from "@mui/system";
 import CarouselCard from "./CarouselCard";
+
+const classes = {
+    button: {
+        underline: "none",
+        color: '#8dffba',
+
+    }
+
+}
 
 const project1 = [
     {
@@ -27,8 +39,12 @@ const project1 = [
 
 const proj1Text = {
     title: 'Drag Race',
-    text: "Web application to search for drag queens using a Rupaul's Drag Race API. Search for drag queens and save them to your own personal All Star team! Made with Flask, Postgres and CSS. Deployed with Heroku at https://capstone1-dragrace.herokuapp.com/register and on Github at https://github.com/howarde4/capstoneOne"
+    text: `Web application to search for drag queens using a Rupaul's Drag Race API. 
+            Search for drag queens and save them to your own personal All Star team! 
+            Made with Flask, Postgres and CSS.`
 }
+
+const proj1Btn = <Button><Link href="https://capstone1-dragrace.herokuapp.com/register" style={classes.button}>Check it out!</Link></Button>
 
 const project2 = [
     {
@@ -65,8 +81,12 @@ const project2 = [
 
 const proj2Text = {
     title: 'Menu Builder',
-    text: "Web application to search for recipes through a recipe API, or add your own recipes and create menus for special events. Built with Express, Postgres, React and Bootstrap. Deployed with Surge at https://venomous-boat.surge.sh/ and on Github at https://github.com/howarde4/Capstone2"
+    text: `Web application to search for recipes through a recipe API, 
+            or add your own recipes and create menus for special events. 
+            Built with Express, Postgres, React and Bootstrap.`
 }
+
+const proj2Btn = <Button><Link href="https://venomous-boat.surge.sh/" style={classes.button}>Check it out!</Link></Button>
 
 const project3 = [
     {
@@ -93,11 +113,13 @@ const proj3Text = {
 
 export default function Projects() {
     return (
-        <Grid container spacing={2}>
-            <CarouselCard project={project1} text={proj1Text} />
-            <CarouselCard project={project2} text={proj2Text} />
-            <CarouselCard project={project3} text={proj3Text} />
-        </Grid>
+        <Box>
+            <Grid container spacing={1}>
+                <CarouselCard project={project1} text={proj1Text} btn={proj1Btn} />
+                <CarouselCard project={project2} text={proj2Text} btn={proj2Btn} />
+                <CarouselCard project={project3} text={proj3Text} />
+            </Grid>
+        </Box>
 
     )
 }
