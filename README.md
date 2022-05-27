@@ -1,1 +1,1 @@
-Portfolio made with React and MUI
+Portfolio made with React and MUI.
